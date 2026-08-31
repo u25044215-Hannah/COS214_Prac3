@@ -1,3 +1,7 @@
+/*u25571878: Kelly Rademeyer
+u25044215: Hannah diedrick
+u25038967: Shelby bodenstein
+*/
 #include "Subject.h"
 #include <algorithm>
 
@@ -7,11 +11,12 @@ Subject::~Subject() {
 }
 
 bool Subject::attach(Observer* observer) {
-    if (observer == 0) {
+    if (observer== 0) 
+    {
         return false;
     }
 
-    if (std::find(observers.begin(), observers.end(), observer) != observers.end()) {
+    if (std::find(observers.begin(), observers.end(), observer)!= observers.end()) {
         return false;
     }
 
@@ -32,13 +37,11 @@ bool Subject::detach(Observer* observer) {
 }
 
 void Subject::notify(const Notice& notice) {
-    // Snapshot policy: changes to registration during notification take effect
-    // on the next notification cycle.
     std::vector<Observer*> snapshot = observers;
 
-    for (std::size_t i = 0; i < snapshot.size(); ++i) {
-        if (snapshot[i] != 0) {
-            snapshot[i]->update(notice);
+    for (std::size_t iCount = 0; iCount < snapshot.size(); ++iCount) {
+        if (snapshot[iCount] != 0) {
+            snapshot[iCount]->update(notice);
         }
     }
 }
