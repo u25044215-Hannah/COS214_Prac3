@@ -8,6 +8,7 @@ u25038967: Shelby bodenstein
 #include <vector>
 #include "EventComponent.h"
 #include "Subject.h"
+//both an observer (someone else's registered list) and a subject(maintain own oberver list)
 
 /**
  * @brief Composite participant representing a Lentedag area or grouping.
