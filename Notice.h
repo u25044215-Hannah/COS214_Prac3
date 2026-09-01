@@ -13,6 +13,7 @@ u25038967: Shelby bodenstein
  * These notice types represent operational changes, capacity changes,
  * safety-related changes and Lentedag-specific festival events.
  */
+//notices that are sent to observers (type determines message sent)
 enum class NoticeType {
 
     /**
@@ -82,6 +83,7 @@ enum class NoticeType {
  * observers to query the Subject for changed state, the relevant information
  * is placed inside a Notice object and passed directly to update().
  */
+//get pushed to update() 
 struct Notice {
 
     /**
