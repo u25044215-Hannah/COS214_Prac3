@@ -8,6 +8,7 @@ u25038967: Shelby bodenstein
  * Subject maintains a collection of non-owning Observer pointers. Observers
  * may register and deregister at runtime using attach() and detach().
  */
+//used by anthing that keeps a list of observers and can notify them of changes
 class Subject {
 public:
 
