@@ -1,12 +1,13 @@
+/*u25571878: Kelly Rademeyer
+u25044215: Hannah diedrick
+u25038967: Shelby bodenstein
+*/
 #ifndef EVENT_CONTROL_H
 #define EVENT_CONTROL_H
 
 #include <string>
 #include "Subject.h"
 
-/**
- * @brief Concrete Subject representing Lentedag central festival control.
- */
 class EventControl : public Subject {
 public:
     explicit EventControl(const std::string& name);
