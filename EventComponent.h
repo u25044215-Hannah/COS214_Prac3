@@ -9,6 +9,7 @@ u25038967: Shelby bodenstein
  * festival units and groups uniformly. It also inherits from Observer so
  * every component may receive festival notices.
  */
+// GoF component
 class EventComponent : public Observer {
 public:
 
@@ -26,6 +27,7 @@ public:
      * Concrete leaves open themselves, while Composite groups apply this
      * operation recursively to their owned children.
      */
+// Composite operations, the thing the client will make a call to.
     virtual void open() = 0;
 
     /**
