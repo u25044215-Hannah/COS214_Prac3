@@ -11,3 +11,4 @@ GENERATE_LATEX         = NO
 QUIET                  = NO
 WARN_IF_UNDOCUMENTED   = YES
 WARN_IF_DOC_ERROR      = YES
+HAVE_DOT               = NO
