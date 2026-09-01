@@ -8,6 +8,8 @@ u25038967: Shelby bodenstein
  * performance status and schedule information and responds differently to
  * safety, capacity, weather and operational notices.
  */
+//inherits from Eventunit (which inherits EventComponent)
+//stage is an observer (adds it's own state)
 class Stage : public EventUnit {
 public:
 
@@ -36,6 +38,7 @@ public:
      *
      * @param notice Notice pushed to this stage.
      */
+//overrides EventComponent's update()
     virtual void update(const Notice& notice);
 
     /**
@@ -44,6 +47,7 @@ public:
      * The report includes open/closed state, pause state, attendance,
      * capacity and current schedule information.
      */
+//overrides EventComponent's reportStatus()
     virtual void reportStatus() const;
 
     /**
