@@ -9,6 +9,7 @@ u25038967: Shelby bodenstein
  * Leaves such as Stage, FoodVendor, DrinkVendor, MedicalUnit and SecurityPost.
 
  */
+//inherits from eventComponent (inherits Observer)
 class EventUnit : public EventComponent {
 public:
 
