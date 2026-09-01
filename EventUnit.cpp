@@ -2,7 +2,8 @@
 #include <iostream>
 
 EventUnit::EventUnit(const std::string& nameIn, int capacityIn): name(nameIn), openState(false), capacity(capacityIn) {}
-
+//default implementations
+//gets inherited buy leaf classes
 void EventUnit::open() {
     openState = true;
     std::cout << "[open] " << name << "\n";

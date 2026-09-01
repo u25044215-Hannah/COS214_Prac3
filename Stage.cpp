@@ -5,14 +5,16 @@ u25038967: Shelby bodenstein
 #include "Stage.h"
 #include <iostream>
 
-Stage::Stage(const std::string& nameIn, int capacityIn, bool outdoorIn)
-    : EventUnit(nameIn, capacityIn),
+//create stage (observer)
+Stage::Stage(const std::string& nameIn, int capacityIn, bool outdoorIn): EventUnit(nameIn, capacityIn),
     outdoor(outdoorIn),
     paused(false),
     attendance(0),
     scheduleMessage("On schedule") {}
 
+//overrides EventComponent's update()
 void Stage::update(const Notice& notice) {
+    // will display string (reportStatus()) based on notice type provided
     switch (notice.type) {
         case NoticeType::OPEN:
             open();
@@ -58,26 +60,33 @@ void Stage::update(const Notice& notice) {
     }
 }
 
+//string of status
+//make call to main to display status of stage
 void Stage::reportStatus() const {
     std::cout << name<< " | Stage | " << (openState ? "Open" : "Closed")<< " | paused=" << (paused ? "yes" : "no")<< " | attendance=" << attendance << "/" << capacity << " | " << scheduleMessage << "\n";
 }
 
 void Stage::setAttendance(int attendanceIn) {
+    //cannot have negative people
     if (attendanceIn < 0) 
     {
         attendanceIn = 0;
     }
+    //cannot have more people than capacity
     if (attendanceIn > capacity) 
     {
         attendanceIn = capacity;
     }
+    //assigning people in attendance
     attendance = attendanceIn;
 }
 
+//return the number of people in attendance
 int Stage::getAttendance() const {
     return attendance;
 }
 
+//returns whether the number of people in attendance is at or above the capacity
 bool Stage::atCapacityThreshold(double fraction) const {
     return capacity > 0 && attendance >= static_cast<int>(capacity * fraction);
 }
