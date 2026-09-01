@@ -9,6 +9,9 @@ u25038967: Shelby bodenstein
  * notices must implement. Subjects notify registered observers by calling
  * update() and pushing a Notice object to them.
  */
+
+//used by anything that can be told something changed
+//anything with an update(const Notice&) method.
 class Observer {
 public:
 
